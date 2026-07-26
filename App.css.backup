@@ -1,0 +1,326 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #feef4c; */
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-header > p {
+  margin-top: -10px;
+  
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+p{
+  font-family: "League Spartan", sans-serif;
+  color: #b88a00;
+  text-align: center;
+}
+
+h1{
+  padding-top: 20px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 90px;
+  color: #b88a00;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #6bccf3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  
+}
+textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f3e16b;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 200px;
+  width: 400px;
+  background: #f6fb61d1;
+}
+.jersey-25-regular {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 2  00;
+  font-style: normal;
+}
+
+
+.output {
+  margin-top: 20px;
+  font-size: 40px;
+  padding-top: 10px;
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  animation: popup 0.5s ease-out;
+  color: #004f7d;
+}
+
+
+@keyframes popup {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Radio button styles */
+.radio-group {
+  margin-top: 10px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+}
+
+
+
+button {
+  
+  font-family: inherit;
+  font-size: 20px;
+  background: #b88a00;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  
+  margin-top: 10px;
+}
+
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(3em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(8em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+.Radio input[type="radio"] {
+  position: absolute;
+  left: -100px;
+  padding-bottom: 20px;
+}
+.Radio input[type="radio"] + label {
+  position: relative;
+  display: block;
+  line-height: 3rem;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #004f7d;
+}
+
+.Radio input[type="radio"] + label::before,
+.Radio input[type="radio"] + label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.2s;
+}
+
+.Radio input[type="radio"] + label {
+  padding-left: 3rem;
+}
+
+.Radio input[type="radio"] + label::before {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #004f7d;
+}
+
+.Radio input[type="radio"] + label::after {
+  left: 0.2rem;
+  width: 1.4rem;
+  transform: translateY(-50%) scale(0);
+}
+
+.Radio input[type="radio"]:not(:checked) + label::after {
+  animation: radio 0.5s linear;
+}
+
+.Radio input[type="radio"]:checked + label::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.Radio input[type="radio"] + label::after {
+  aspect-ratio: 1 / 1;
+  border: 0.1rem solid #fff;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 30%, #fff, rgba(0, 0, 0, 0) 25%),
+    radial-gradient(
+      circle at 60% 55%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(255, 0, 255, 0.8) 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 255, 255, 0.2) 60%,
+      rgba(0, 0, 0, 0) 68%
+    ),
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(255, 255, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0) 55%
+    );
+}
+
+@keyframes radio {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  100% {
+    transform: translateY(-50%) scale(1.7);
+  }
+}
+
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgb(255, 251, 0), transparent 20%, rgb(209, 238, 136));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 238, 0, 0.593);
+}
+
+
+.input {
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  box-shadow: 20px 20px 60px #c5c5c5,
+     -20px -20px 60px #ffffff;
+  transition: 0.3s;
+ }
+ 
+ .input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5,
+     inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+ }
+
+ .card a{
+  color: #b88a00;
+ }
+
+.card a:hover {
+  color: rgb(255, 85, 0);
+}
+
+ .card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.centerButton{
+  justify-content: center;
+}
+.padd > p {
+  padding-top: 0px;
+}

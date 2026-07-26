@@ -1,0 +1,441 @@
+/* App.css - Neon Yellow/Black Glow (No Butterfly) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 16px;
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.App {
+    width: 100%;
+    max-width: 620px;
+    position: relative;
+}
+
+/* ============================================
+   MAIN CARD - NEON BORDER GLOW
+   ============================================ */
+.card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #ffd700;
+    border-radius: 28px;
+    padding: 32px 28px;
+    box-shadow: 
+        0 0 25px rgba(255, 215, 0, 0.25),
+        0 0 60px rgba(255, 215, 0, 0.10),
+        inset 0 0 30px rgba(255, 215, 0, 0.05);
+    transition: box-shadow 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 
+        0 0 40px rgba(255, 215, 0, 0.4),
+        0 0 80px rgba(255, 215, 0, 0.15),
+        inset 0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+/* ============================================
+   SOCIAL SHARE ICONS
+   ============================================ */
+.share {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.share a {
+    color: #ffd700;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share a:hover {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.App-header {
+    text-align: center;
+    color: #fff;
+}
+
+.App-header h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffd700 0%, #ffb300 50%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-top: 4px;
+    margin-bottom: 22px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    padding: 16px 18px;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1.5px solid #333;
+    border-radius: 16px;
+    color: #eee;
+    font-size: 0.95rem;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+    min-height: 110px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.15), inset 0 0 15px rgba(255, 215, 0, 0.05);
+    background: rgba(25, 25, 25, 0.95);
+}
+
+textarea::placeholder {
+    color: #555;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+}
+
+textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   BUTTON WITH NEON GLOW
+   ============================================ */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    border: 1.5px solid #ffd700;
+    border-radius: 60px;
+    color: #ffd700;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    width: fit-content;
+    margin: 0 auto;
+    min-width: 180px;
+}
+
+button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), 0 0 80px rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.96);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+button .svg-wrapper-1 {
+    display: flex;
+    align-items: center;
+}
+
+button svg {
+    color: #ffd700;
+    transition: transform 0.3s ease;
+}
+
+button:hover:not(:disabled) svg {
+    transform: translateX(4px) rotate(-8deg);
+}
+
+button.loading span::after {
+    content: '...';
+    animation: dots 1.2s steps(3, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+}
+
+/* ============================================
+   RESULT MESSAGE
+   ============================================ */
+.result-message {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid #ffd700;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.result-message pre {
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.92rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablets & small laptops */
+@media (max-width: 768px) {
+    .card {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    .App-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+        padding: 14px 16px;
+        min-height: 100px;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+        min-width: 150px;
+    }
+
+    .result-message pre {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 18px 14px;
+        border-radius: 18px;
+        border-width: 1.5px;
+    }
+
+    .share {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .share a svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .App-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.78rem;
+        margin-bottom: 16px;
+    }
+
+    textarea {
+        font-size: 0.85rem;
+        padding: 12px 14px;
+        min-height: 90px;
+        border-radius: 14px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+        min-width: 130px;
+        gap: 8px;
+        border-radius: 40px;
+    }
+
+    button svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .result-message {
+        padding: 14px 16px;
+        margin-top: 16px;
+        border-radius: 14px;
+    }
+
+    .result-message pre {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+    .card {
+        padding: 14px 10px;
+        border-radius: 16px;
+    }
+
+    .App-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.7rem;
+    }
+
+    textarea {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        min-height: 80px;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 10px 16px;
+        min-width: 110px;
+    }
+
+    .result-message pre {
+        font-size: 0.75rem;
+    }
+}
+
+/* Landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+    .card {
+        padding: 16px 20px;
+    }
+
+    .App-header h1 {
+        font-size: 1.4rem;
+    }
+
+    textarea {
+        min-height: 70px;
+        padding: 10px 14px;
+    }
+
+    .result-message {
+        padding: 12px 16px;
+        margin-top: 12px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .App {
+        max-width: 760px;
+    }
+
+    .card {
+        padding: 44px 40px;
+        border-radius: 36px;
+    }
+
+    .App-header h1 {
+        font-size: 2.6rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    textarea {
+        font-size: 1.05rem;
+        min-height: 140px;
+        padding: 20px 24px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 18px 36px;
+        min-width: 220px;
+    }
+
+    .result-message pre {
+        font-size: 1rem;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    button,
+    textarea,
+    .result-message {
+        animation: none !important;
+        transition: none !important;
+    }
+}
